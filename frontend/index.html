@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TalentAI — Resume Screening</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AI
+            </div>
+
+            <div>
+
+                <h2>
+                    TalentAI
+                </h2>
+
+                <span>
+                    Resume Intelligence
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <a
+                href="#dashboard"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="#resume-screening"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◈
+                </span>
+
+                Resume Screening
+
+            </a>
+
+
+            <a
+                href="#candidates"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◫
+                </span>
+
+                Candidates
+
+            </a>
+
+
+            <a
+                href="#job-descriptions"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                Job Descriptions
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <div class="status-dot"></div>
+
+                <div>
+
+                    <strong>
+                        AI Engine Online
+                    </strong>
+
+                    <small>
+                        Ready to analyze
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-footer">
+
+                <span>
+                    TalentAI
+                </span>
+
+                <span>
+                    v1.0
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main
+        class="main"
+        id="dashboard"
+    >
+
+
+        <!-- ==================================================
+             TOP BAR
+        =================================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="eyebrow">
+                    AI RECRUITMENT PLATFORM
+                </p>
+
+                <h1>
+                    Resume Screening
+                </h1>
+
+                <p class="subtitle">
+
+                    Analyze candidate resumes against
+                    your job requirements using
+                    AI-powered matching.
+
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="system-status">
+
+                    <span class="status-dot"></span>
+
+                    System operational
+
+                </div>
+
+
+                <div class="avatar">
+                    AH
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             SCREENING AREA
+        =================================================== -->
+
+        <section
+            class="screening-grid"
+            id="resume-screening"
+        >
+
+
+            <!-- ==================================================
+                 RESUME UPLOAD
+            =================================================== -->
+
+            <div class="panel upload-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="panel-label">
+                            STEP 01
+                        </p>
+
+                        <h2>
+                            Candidate Resume
+                        </h2>
+
+                    </div>
+
+
+                    <span class="required">
+                        Required
+                    </span>
+
+                </div>
+
+
+                <!-- DROP ZONE -->
+
+                <div
+                    class="drop-zone"
+                    id="dropZone"
+                >
+
+                    <input
+                        type="file"
+                        id="resume"
+                        accept=".pdf,.docx"
+                        hidden
+                    >
+
+
+                    <!-- UPLOAD CONTENT -->
+
+                    <div
+                        class="upload-content"
+                        id="uploadContent"
+                    >
+
+                        <div class="upload-icon">
+                            ↑
+                        </div>
+
+
+                        <h3>
+                            Upload candidate resume
+                        </h3>
+
+
+                        <p>
+
+                            Drag & drop your resume here or
+
+                            <button
+                                type="button"
+                                id="browseButton"
+                            >
+                                browse files
+                            </button>
+
+                        </p>
+
+
+                        <span class="file-types">
+
+                            PDF or DOCX ·
+                            Maximum 10 MB
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- SELECTED FILE -->
+
+                    <div
+                        class="selected-file hidden"
+                        id="selectedFile"
+                    >
+
+                        <div
+                            class="file-icon"
+                            id="fileIcon"
+                        >
+                            PDF
+                        </div>
+
+
+                        <div class="file-details">
+
+                            <strong id="fileName">
+                                resume.pdf
+                            </strong>
+
+                            <span id="fileSize">
+                                0 KB
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="remove-file"
+                            id="removeFile"
+                            aria-label="Remove file"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 JOB DESCRIPTION
+            =================================================== -->
+
+            <div
+                class="panel job-panel"
+                id="job-descriptions"
+            >
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="panel-label">
+                            STEP 02
+                        </p>
+
+                        <h2>
+                            Job Description
+                        </h2>
+
+                    </div>
+
+
+                    <span class="required">
+                        Required
+                    </span>
+
+                </div>
+
+
+                <div class="textarea-wrapper">
+
+                    <textarea
+                        id="jobDescription"
+                        placeholder="Paste the job description here...
+
+Example:
+Legal Associate
+
+Requirements:
+• LL.B. degree
+• 2+ years of experience
+• Commercial law
+• Contract drafting
+• Litigation
+• Legal research
+• Property law"
+                    ></textarea>
+
+
+                    <div class="textarea-footer">
+
+                        <span>
+
+                            AI will extract skills,
+                            experience and education
+                            automatically.
+
+                        </span>
+
+
+                        <span id="characterCount">
+
+                            0 characters
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SCREEN BUTTON
+        =================================================== -->
+
+        <div class="action-row">
+
+            <div class="privacy-note">
+
+                <span>
+                    🔒
+                </span>
+
+                Resume data is processed securely
+                and removed after analysis.
+
+            </div>
+
+
+            <button
+                class="screen-button"
+                id="screenButton"
+                type="button"
+                onclick="screenResume()"
+            >
+
+                <span class="button-icon">
+                    ✦
+                </span>
+
+                Analyze Resume
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             LOADING
+        =================================================== -->
+
+        <div
+            class="loading-card hidden"
+            id="loading"
+        >
+
+            <div class="loading-spinner"></div>
+
+
+            <div>
+
+                <strong>
+                    Analyzing candidate...
+                </strong>
+
+
+                <p>
+
+                    Extracting skills, experience,
+                    education and calculating
+                    match score.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             ERROR
+        =================================================== -->
+
+        <div
+            class="error-card hidden"
+            id="error"
+        ></div>
+
+
+
+        <!-- ==================================================
+             SCREENING RESULTS
+        =================================================== -->
+
+        <section
+            class="results hidden"
+            id="results"
+        >
+
+
+            <!-- RESULTS HEADER -->
+
+            <div class="results-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SCREENING COMPLETE
+                    </p>
+
+
+                    <h2>
+                        Candidate Analysis
+                    </h2>
+
+
+                    <p>
+
+                        AI-generated candidate-to-job
+                        compatibility report.
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    onclick="resetScreening()"
+                >
+
+                    New Screening
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 SCORE + CANDIDATE
+            =================================================== -->
+
+            <div class="result-hero">
+
+
+                <!-- SCORE -->
+
+                <div class="score-card">
+
+                    <div class="score-ring">
+
+                        <div class="score-inner">
+
+                            <strong id="overallScore">
+                                0%
+                            </strong>
+
+                            <span>
+                                Match Score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="recommendation"
+                        id="recommendation"
+                    >
+                        REVIEW
+                    </div>
+
+                </div>
+
+
+
+                <!-- CANDIDATE -->
+
+                <div class="candidate-card">
+
+                    <div
+                        class="candidate-avatar"
+                        id="candidateAvatar"
+                    >
+                        C
+                    </div>
+
+
+                    <div class="candidate-main">
+
+                        <p class="card-label">
+                            CANDIDATE
+                        </p>
+
+
+                        <h2 id="candidateName">
+                            Candidate
+                        </h2>
+
+
+                        <div class="candidate-contact">
+
+                            <span id="candidateEmail">
+                                —
+                            </span>
+
+                            <span class="separator">
+                                •
+                            </span>
+
+                            <span id="candidatePhone">
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 KPI CARDS
+            =================================================== -->
+
+            <div class="metrics-grid">
+
+
+                <div class="metric-card">
+
+                    <span class="metric-icon">
+                        ⚡
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Skills Match
+                        </span>
+
+                        <strong id="skillsScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <span class="metric-icon">
+                        ◷
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <strong id="experienceScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <span class="metric-icon">
+                        ◆
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Education
+                        </span>
+
+                        <strong id="educationScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <span class="metric-icon">
+                        ◎
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Role Match
+                        </span>
+
+                        <strong id="jobTitleScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <span class="metric-icon">
+                        ⌁
+                    </span>
+
+                    <div>
+
+                        <span>
+                            Text Similarity
+                        </span>
+
+                        <strong id="similarityScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 SKILLS ANALYSIS
+            =================================================== -->
+
+            <div class="analysis-grid">
+
+
+                <!-- MATCHED SKILLS -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                STRENGTHS
+                            </p>
+
+                            <h3>
+                                Matched Skills
+                            </h3>
+
+                        </div>
+
+
+                        <span
+                            class="count-badge green"
+                            id="matchedCount"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="skill-list"
+                        id="matchedSkills"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- MISSING SKILLS -->
+
+                <div class="analysis-card">
+
+                    <div class="analysis-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                GAPS
+                            </p>
+
+                            <h3>
+                                Missing Skills
+                            </h3>
+
+                        </div>
+
+
+                        <span
+                            class="count-badge red"
+                            id="missingCount"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="skill-list"
+                        id="missingSkills"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 SCORE BREAKDOWN
+            =================================================== -->
+
+            <div class="analysis-card breakdown-card">
+
+                <div class="analysis-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            AI SCORING
+                        </p>
+
+                        <h3>
+                            Match Breakdown
+                        </h3>
+
+                    </div>
+
+
+                    <span class="breakdown-info">
+                        Weighted analysis
+                    </span>
+
+                </div>
+
+
+                <div class="breakdown-list">
+
+
+                    <!-- SKILLS -->
+
+                    <div class="breakdown-row">
+
+                        <div class="breakdown-name">
+
+                            <span>
+                                Skills
+                            </span>
+
+                            <strong id="breakdownSkills">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill"
+                                id="skillsProgress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EXPERIENCE -->
+
+                    <div class="breakdown-row">
+
+                        <div class="breakdown-name">
+
+                            <span>
+                                Experience
+                            </span>
+
+                            <strong id="breakdownExperience">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill"
+                                id="experienceProgress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EDUCATION -->
+
+                    <div class="breakdown-row">
+
+                        <div class="breakdown-name">
+
+                            <span>
+                                Education
+                            </span>
+
+                            <strong id="breakdownEducation">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill"
+                                id="educationProgress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ROLE -->
+
+                    <div class="breakdown-row">
+
+                        <div class="breakdown-name">
+
+                            <span>
+                                Role Match
+                            </span>
+
+                            <strong id="breakdownJobTitle">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill"
+                                id="jobTitleProgress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SIMILARITY -->
+
+                    <div class="breakdown-row">
+
+                        <div class="breakdown-name">
+
+                            <span>
+                                Text Similarity
+                            </span>
+
+                            <strong id="breakdownSimilarity">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-fill"
+                                id="similarityProgress"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 RESUME PROFILE
+            =================================================== -->
+
+            <div class="analysis-card">
+
+                <div class="analysis-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            RESUME PROFILE
+                        </p>
+
+                        <h3>
+                            Candidate Information
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <strong id="experience">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Education
+                        </span>
+
+                        <strong id="education">
+                            —
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="profile-item">
+
+                        <span>
+                            Previous Roles
+                        </span>
+
+                        <strong id="jobTitles">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CANDIDATES DATABASE
+        =================================================== -->
+
+        <section
+            class="candidates-section"
+            id="candidates"
+        >
+
+
+            <!-- HEADER -->
+
+            <div class="results-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        TALENT DATABASE
+                    </p>
+
+                    <h2>
+                        Candidates
+                    </h2>
+
+                    <p>
+                        Previously screened candidates
+                        and their AI match scores.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="refreshCandidatesButton"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 CANDIDATE CONTROLS
+            =================================================== -->
+
+            <div class="candidate-controls">
+
+
+                <!-- SEARCH -->
+
+                <div class="candidate-search">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="candidateSearch"
+                        placeholder="Search candidate or position..."
+                    >
+
+                </div>
+
+
+
+                <!-- FILTER -->
+
+                <select
+                    id="recommendationFilter"
+                    class="candidate-filter"
+                >
+
+                    <option value="all">
+                        All Recommendations
+                    </option>
+
+                    <option value="strong">
+                        Strong Shortlist
+                    </option>
+
+                    <option value="shortlist">
+                        Shortlist
+                    </option>
+
+                    <option value="review">
+                        Review
+                    </option>
+
+                    <option value="not recommended">
+                        Not Recommended
+                    </option>
+
+                </select>
+
+
+
+                <!-- SORT -->
+
+                <select
+                    id="candidateSort"
+                    class="candidate-filter"
+                >
+
+                    <option value="score-desc">
+                        Highest Score
+                    </option>
+
+                    <option value="score-asc">
+                        Lowest Score
+                    </option>
+
+                    <option value="newest">
+                        Newest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                    <option value="name">
+                        Name A–Z
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 CANDIDATE TABLE
+            =================================================== -->
+
+            <div class="candidate-table-card">
+
+                <div class="candidate-table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Candidate
+                                </th>
+
+                                <th>
+                                    Position
+                                </th>
+
+                                <th>
+                                    Experience
+                                </th>
+
+                                <th>
+                                    Match
+                                </th>
+
+                                <th>
+                                    Recommendation
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="candidatesTableBody"
+                        >
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="empty-table"
+                                >
+                                    Loading candidates...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FOOTER
+        =================================================== -->
+
+        <footer>
+
+            <span>
+                TalentAI Resume Intelligence
+            </span>
+
+            <span>
+                Built with FastAPI · Python · NLP
+            </span>
+
+        </footer>
+        
+        <div id="candidateDetailModal" class="candidate-modal hidden"
+            role="dialog" aria-modal="true"
+            aria-labelledby="candidateDetailTitle">
+            <div class="candidate-modal-backdrop" data-close-modal></div>
+
+            <section class="candidate-modal-panel">
+                <header class="candidate-modal-header">
+                    <div>
+                        <p class="eyebrow">SCREENING HISTORY</p>
+                        <h2 id="candidateDetailTitle">Candidate Details</h2>
+                        <p id="detailScreeningMeta" class="detail-muted"></p>
+                    </div>
+                    <button type="button" id="closeCandidateModal"
+                            class="modal-close" aria-label="Close details">
+                        &times;
+                    </button>
+                </header>
+
+                <div id="candidateDetailContent">
+                    <p>Loading screening details...</p>
+                </div>
+            </section>
+        </div>
+
+
+
+    </main>
+
+</div>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+=================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
