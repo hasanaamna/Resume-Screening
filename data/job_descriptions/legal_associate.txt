@@ -17,3 +17,8 @@ Requirements:
 - Negotiation
 - Legal notices
 - Court proceedings
+
+
+
+
+this is the command to start the frontend server= python -m http.server 5500 --bind 127.0.0.1
